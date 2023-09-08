@@ -7,8 +7,8 @@ const githubURL = document.querySelector("[data-testid='githubURL']");
 
 // To set Slack name and profile picture
 const setSlackInfo = () => {
-  slackUserName.textContent = "Geofrey Njogu Simiyu";
-  slackDisplayImage.src = "slack profilepic.jpg";
+  slackUserName.textContent = "Geofrey";
+  slackDisplayImage.src = "slack-profile-picture.jpg";
   slackDisplayImage.alt = "Geofrey";
 };
 
