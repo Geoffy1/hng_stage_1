@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Frontend Page</title>
-   <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-   <header>
-       <h1 data-testid="slackUserName">Geofrey</h1>
-       <img src="slack-profile-picture.jpg" alt="Geofrey" data-testid="slackDisplayImage">
-   </header>
-   <section>
-       <p id="currentDayOfTheWeek" data-testid="currentDayOfTheWeek">Current Day: </p>
-       <p id="currentUTCTime" data-testid="currentUTCTime">Current UTC Time: </p>
-       <p data-testid="myTrack">Track: Frontend</p>
-   </section>
-   <footer>
-       <a href="https://github.com/Geoffy1/hng_stage_1" data-testid="githubURL">GitHub Repository</a>
-   </footer>
-   <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hng stage 1</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav>My HNG profile page</nav>
+        <div class="container">
+            <img
+                src="slack-profile-picture.jpg"
+                alt="Geofrey"
+                data-testid="slackDisplayImage"
+            />
+            <br>
+            <br>
+            <div class="profile-details">
+                <div style="display: flex;align-items: center;">
+                    <h2 style="margin-right: 14px;">Slack Name:</h2>
+                    <h1 data-testid="slackUserName">Geofrey</h1>
+                </div>
+                <br />
+                <div style="display: flex; align-items: center">
+                    <h2 style="margin-right: 8px">current Day Of TheWeek:</h2>
+                    <p data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>
+                </div>
+                <br>
+                <div style="display: flex; align-items: center">
+                    <h2>current UTC Time: </h2>
+                    <p id="currentUTCTime" data-testid="currentUTCTime"></p>
+                </div>
+                <br>
+                <div  style="display: flex; align-items: center" >
+                    <h2 style="margin-right: 14px;">MY Track: </h2>                    
+                    <p data-testid="myTrack">Frontend</p>
+                </div>
+                <br>
+                <div style="display: flex; align-items:center ;">
+                    <h2 style="margin-right: 14px;">GitHub Repository: </h2>
+                    <a
+                        href="https://github.com/Geoffy1/hng_stage_1"
+                        data-testid="githubURL"
+                        >GitHub Repository</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
