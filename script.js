@@ -1,19 +1,8 @@
-const slackUserName = document.querySelector("[data-testid='slackUserName']");
-const slackDisplayImage = document.querySelector("[data-testid='slackDisplayImage']");
-const currentDayOfTheWeek = document.querySelector("[data-testid='currentDayOfTheWeek']");
-const currentUTCTime = document.querySelector("[data-testid='currentUTCTime']");
-const myTrack = document.querySelector("[data-testid='myTrack']");
-const githubURL = document.querySelector("[data-testid='githubURL']");
+const currentDayText = document.querySelector("#currentDayOfTheWeek");
+const currentUTCTime = document.getElementById("currentUTCTime");
+const date = new Date();
 
-// To set Slack name and profile picture
-const setSlackInfo = () => {
-  slackUserName.textContent = "Geofrey";
-  slackDisplayImage.src = "slack-profile-picture.jpg";
-  slackDisplayImage.alt = "Geofrey";
-};
-
-// This function sets current day of the week
-const setCurrentDayOfTheWeek = () => {
+const calcCurrentDate = () => {
   const daysOfTheWeek = [
     "Sunday",
     "Monday",
@@ -23,35 +12,17 @@ const setCurrentDayOfTheWeek = () => {
     "Friday",
     "Saturday",
   ];
-  const dayIndex = new Date().getDay();
+  const dayIndex = date.getDay();
   const currentDay = daysOfTheWeek[dayIndex];
-  currentDayOfTheWeek.textContent = `Current Day: ${currentDay}`;
+  currentDayText.innerText = currentDay;
 };
 
-// Function to set current UTC time
-const setCurrentUTCTime = () => {
-  const currentDate = new Date();
-  const utcTimeString = currentDate.toUTCString();
-  currentUTCTime.textContent = `Current Time: ${utcTimeString}`;
+const calcUTCTime = () => {
+  const date = new Date();
+  const utcTimeMilliseconds = date.getTime();
+  currentUTCTime.textContent = utcTimeMilliseconds;
 };
 
-// Function to set your actua track
-const setMyTrack = () => {
-  myTrack.textContent = "Track: Frontend";
-};
-
-// a Function to set GitHub URL
-const setGitHubURL = () => {
-  githubURL.href = "https://github.com/Geoffy1/hng_stage_1";
-  githubURL.textContent = "GitHub Repository";
-};
-
-// Calls the functions to set the data
-setSlackInfo();
-setCurrentDayOfTheWeek();
-setCurrentUTCTime();
-setMyTrack();
-setGitHubURL();
-
-// Updates the UTC time every second
-setInterval(setCurrentUTCTime, 1000);
+calcCurrentDate();
+calcUTCTime();
+setInterval(calcUTCTime, 1000);
